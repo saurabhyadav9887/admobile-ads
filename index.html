@@ -12,7 +12,7 @@
 <!-- 🔹 Banner 320x50 -->
 <div style="margin-top:15px;">
 <script>
-atOptions = {
+var atOptions1 = {
   'key' : '5ace83be879b3c04c475f6121ccbac55',
   'format' : 'iframe',
   'height' : 50,
@@ -26,7 +26,7 @@ atOptions = {
 <!-- 🔹 Banner 300x250 -->
 <div style="margin-top:20px;">
 <script>
-atOptions = {
+var atOptions2 = {
   'key' : 'db7a829ab150f7601afb32bbf2f83c38',
   'format' : 'iframe',
   'height' : 250,
@@ -37,9 +37,19 @@ atOptions = {
 <script src="https://www.highperformanceformat.com/db7a829ab150f7601afb32bbf2f83c38/invoke.js"></script>
 </div>
 
-<!-- 🔹 Smartlink Redirect (SAFE DELAY) -->
+<!-- 🔥 SMARTLINK FIXED REDIRECT -->
 <script>
-var nextLink = window.location.search.substring(1);
+function getSmartLink() {
+  let url = window.location.href;
+  let parts = url.split("?");
+  
+  if(parts.length > 1){
+    return decodeURIComponent(parts[1]);
+  }
+  return null;
+}
+
+let nextLink = getSmartLink();
 
 if(nextLink){
   setTimeout(function(){
