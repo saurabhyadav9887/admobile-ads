@@ -7,54 +7,67 @@
 
 <body style="margin:0; padding:0; text-align:center;">
 
-<h3>Loading Content... Please wait</h3>
+<h3>Loading Ads...</h3>
 
-<!-- 🔹 Banner 320x50 -->
+<!-- 🔹 320x50 Banner -->
 <div style="margin-top:15px;">
 <script>
-var atOptions1 = {
-  'key' : '5ace83be879b3c04c475f6121ccbac55',
-  'format' : 'iframe',
-  'height' : 50,
-  'width' : 320,
-  'params' : {}
-};
+(function(){
+  var atOptions = {
+    'key' : '5ace83be879b3c04c475f6121ccbac55',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+  var d = document;
+  var s = d.createElement('script');
+  s.src = 'https://www.highperformanceformat.com/5ace83be879b3c04c475f6121ccbac55/invoke.js';
+  d.body.appendChild(s);
+})();
 </script>
-<script src="https://www.highperformanceformat.com/5ace83be879b3c04c475f6121ccbac55/invoke.js"></script>
 </div>
 
-<!-- 🔹 Banner 300x250 -->
+<!-- 🔹 300x250 Banner -->
 <div style="margin-top:20px;">
 <script>
-var atOptions2 = {
-  'key' : 'db7a829ab150f7601afb32bbf2f83c38',
-  'format' : 'iframe',
-  'height' : 250,
-  'width' : 300,
-  'params' : {}
-};
+(function(){
+  var atOptions = {
+    'key' : 'db7a829ab150f7601afb32bbf2f83c38',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+  var d = document;
+  var s = d.createElement('script');
+  s.src = 'https://www.highperformanceformat.com/db7a829ab150f7601afb32bbf2f83c38/invoke.js';
+  d.body.appendChild(s);
+})();
 </script>
-<script src="https://www.highperformanceformat.com/db7a829ab150f7601afb32bbf2f83c38/invoke.js"></script>
 </div>
 
-<!-- 🔥 SMARTLINK FIXED REDIRECT -->
+<!-- 🔥 SAFE SMARTLINK REDIRECT -->
 <script>
-function getSmartLink() {
-  let url = window.location.href;
-  let parts = url.split("?");
-  
-  if(parts.length > 1){
-    return decodeURIComponent(parts[1]);
+try {
+  function getSmartLink(){
+    let url = window.location.href;
+    let parts = url.split("?");
+    if(parts.length > 1){
+      return decodeURIComponent(parts[1]);
+    }
+    return null;
   }
-  return null;
-}
 
-let nextLink = getSmartLink();
+  var nextLink = getSmartLink();
 
-if(nextLink){
-  setTimeout(function(){
-    window.location.href = nextLink;
-  }, 10000); // 10 sec delay
+  if(nextLink){
+    setTimeout(function(){
+      window.location.href = nextLink;
+    }, 10000);
+  }
+} catch(e) {
+  console.log("Smartlink error safe handled");
 }
 </script>
 
