@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ad Mobile Ads</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ad Mobile Ads</title>
 </head>
 
 <body style="margin:0; padding:0; text-align:center; font-family:Arial;">
@@ -49,19 +49,24 @@ src="https://www.highperformanceformat.com/db7a829ab150f7601afb32bbf2f83c38/invo
 
 </div>
 
-<!-- 🔥 AUTO REDIRECT AFTER 10 SECONDS -->
+<br><br>
+
+<!-- 🔥 Skip Button -->
+<button id="skipBtn"
+style="padding:12px 25px; font-size:18px;"
+disabled>
+Skip Ad
+</button>
+
 <script>
 
 function getNextLink() {
 
   let url = window.location.href;
-
   let parts = url.split("?");
 
   if(parts.length > 1) {
-
     return decodeURIComponent(parts[1]);
-
   }
 
   return null;
@@ -69,15 +74,20 @@ function getNextLink() {
 
 let nextLink = getNextLink();
 
-if(nextLink){
+setTimeout(function(){
 
-  setTimeout(function(){
+  document.getElementById("skipBtn").disabled = false;
+  document.getElementById("skipBtn").innerHTML = "Continue";
 
+}, 10000);
+
+document.getElementById("skipBtn").onclick = function(){
+
+  if(nextLink){
     window.location.href = nextLink;
+  }
 
-  }, 10000);
-
-}
+};
 
 </script>
 
